@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  myLibaryDB:
+    image: postgres:15.7
+    container_name: my-library
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=promotor
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=library-db
+    volumes:
+      - ./postgres2:/var/lib/postgresql/data
+  
