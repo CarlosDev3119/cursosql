@@ -1,16 +1,16 @@
 version: '3'
 
 services:
-  myStoreDB:
+  alumnos:
     image: postgres:15.7
-    container_name: my-store
+    container_name: alumnos-db
     restart: always
     ports:
-      - 5434:5432
+      - 5435:5432
     environment:
       - POSTGRES_USER=carlos
       - POSTGRES_PASSWORD=123123
-      - POSTGRES_DB=storeDB
+      - POSTGRES_DB=alumnosDB
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ./postgresAlumnos:/var/lib/postgresql/data
   

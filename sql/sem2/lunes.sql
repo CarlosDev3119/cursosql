@@ -38,7 +38,7 @@ SELECT CONCAT( SUBSTRING(copies_sold::TEXT, 0, POSITION('.' in copies_sold::TEXT
 
 BEGIN;
 	update books SET copies_sold = CONCAT( SUBSTRING(copies_sold::TEXT, 0, POSITION('.' in copies_sold::TEXT) -2 ), '.00')::numeric;
-	
+
 ROLLBACK;
 
 BEGIN;
